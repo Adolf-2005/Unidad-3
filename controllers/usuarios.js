@@ -98,4 +98,4 @@ class Usuario {
 
 
 const usuariosC = new Usuario();
-module.exports = usuariosC;  
+module.exports = usuariosC;
