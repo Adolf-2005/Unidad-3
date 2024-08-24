@@ -35,4 +35,4 @@ const checkAutenticacion = async (req, res, next, roles) => {
     }
 }
 
-module.exports = checkAutenticacion  
+module.exports = checkAutenticacion 

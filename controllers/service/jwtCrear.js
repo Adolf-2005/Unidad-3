@@ -9,4 +9,4 @@ function crearToken(datos) {
     return accesoToken;
 }
 
-module.exports = { crearToken }  
+module.exports = { crearToken }
