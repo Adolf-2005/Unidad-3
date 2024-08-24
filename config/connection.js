@@ -31,4 +31,4 @@ const validateConnection = async () => {
     }
 })();
 
-module.exports = {pool, validateConnection};
+module.exports = {pool, validateConnection}; 
