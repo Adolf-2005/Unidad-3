@@ -37,4 +37,4 @@ router.post('/estudiante', function (req, res, next) {
     })
 })
 
-module.exports = router;   
+module.exports = router;
