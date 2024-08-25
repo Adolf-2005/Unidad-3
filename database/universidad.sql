@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-12-2023 a las 14:10:47
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Tiempo de generación: 25-08-2024 a las 00:13:46
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `universidad`
 --
-CREATE DATABASE IF NOT EXISTS `universidad` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish2_ci;
-USE `universidad`;
 
 -- --------------------------------------------------------
 
@@ -31,9 +29,9 @@ USE `universidad`;
 
 CREATE TABLE `estudiantes` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(200) COLLATE utf8_spanish2_ci NOT NULL,
+  `nombre` varchar(200) NOT NULL,
   `edad` int(3) NOT NULL,
-  `carrera` varchar(200) COLLATE utf8_spanish2_ci NOT NULL
+  `carrera` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
@@ -41,12 +39,13 @@ CREATE TABLE `estudiantes` (
 --
 
 INSERT INTO `estudiantes` (`id`, `nombre`, `edad`, `carrera`) VALUES
-(6, 'Luis Peña', 50, 'Ingeniería de Computación'),
-(7, 'Peter Quintero', 18, 'Ingeniería Industrial'),
-(8, 'Camilo Vargas', 20, 'Ingeniería Industrial'),
-(9, 'Camilo Ortega', 19, 'Ingeniería Industrial'),
-(10, 'Sofia Torres', 19, 'Ingeniería Civil'),
-(11, 'Estefanni Torres', 25, 'Ingeniería Civil');
+(6, 'Jorge Fernández', 20, 'Ingeniería Industrial'),
+(7, 'María José', 18, 'Ingeniería Industrial'),
+(8, 'Cesar Sánchez', 20, 'Derecho'),
+(9, 'Fernando Fernández', 19, 'Derecho'),
+(10, 'Thiago Matías', 19, 'Contaduría'),
+(11, 'Carla Martínez', 25, 'Contaduría'),
+(12, 'Oscar Suarez', 18, 'Ingeniería en Computación');
 
 -- --------------------------------------------------------
 
@@ -56,9 +55,9 @@ INSERT INTO `estudiantes` (`id`, `nombre`, `edad`, `carrera`) VALUES
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `usuario` varchar(200) COLLATE utf8_spanish2_ci NOT NULL,
-  `password` varchar(1000) COLLATE utf8_spanish2_ci NOT NULL,
-  `rol` varchar(200) COLLATE utf8_spanish2_ci NOT NULL
+  `usuario` varchar(200) NOT NULL,
+  `password` varchar(1000) NOT NULL,
+  `rol` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
@@ -66,8 +65,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `password`, `rol`) VALUES
-(1, 'luis26', '$2b$10$D8HEu3QyLzQZE6fQJfwsK.SYKoxYiXC3l/dNezjFWDErTarGakUI2', 'admin'),
-(2, 'luis25', '$2b$10$GCbjuMYA16d7PBxN1Nq6RuFKMVcmzw6asJzal8U8yEcJtIettM4wq', 'editor');
+(3, 'Adolfo69', '$2b$10$LpftWAyd2Txtr1Rfmb9rLO6s7mhB170V5UgFQHLzcybCJIKDdno7K', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -93,13 +91,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
